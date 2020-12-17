@@ -3,10 +3,11 @@ package com.ale.ovng.infra.exercise.model.Class;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.util.LinkedHashMap;
 
-//@ApplicationScoped
+@Schema(name="QoE Devices", description="POJO that represents the details of QoE for each device.")
 @JsonRootName("QoE")
 public class QoE {
 

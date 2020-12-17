@@ -1,4 +1,4 @@
-package com.ale.ovng.infra.exercise.conroller;
+package com.ale.ovng.infra.exercise.controller;
 
 
 import com.ale.ovng.infra.exercise.service.RESTAPI;

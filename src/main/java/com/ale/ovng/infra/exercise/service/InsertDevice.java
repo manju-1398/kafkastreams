@@ -1,4 +1,4 @@
-package com.ale.ovng.infra.exercise.Service;
+package com.ale.ovng.infra.exercise.service;
 
 import com.ale.ovng.infra.exercise.connector.Consume;
 

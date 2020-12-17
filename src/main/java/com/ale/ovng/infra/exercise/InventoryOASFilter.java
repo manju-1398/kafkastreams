@@ -1,14 +1,14 @@
-package org.acme.rest.json;
-
-import java.util.Collections;
+package com.ale.ovng.infra.exercise;
 
 import org.eclipse.microprofile.openapi.OASFactory;
 import org.eclipse.microprofile.openapi.OASFilter;
 import org.eclipse.microprofile.openapi.models.OpenAPI;
 import org.eclipse.microprofile.openapi.models.info.Contact;
-import org.eclipse.microprofile.openapi.models.info.License;
 import org.eclipse.microprofile.openapi.models.info.Info;
+import org.eclipse.microprofile.openapi.models.info.License;
 import org.eclipse.microprofile.openapi.models.responses.APIResponse;
+
+import java.util.Collections;
 
 public class InventoryOASFilter implements OASFilter {
 
@@ -24,26 +24,16 @@ public class InventoryOASFilter implements OASFilter {
     @Override
     public void filterOpenAPI(OpenAPI openAPI) {
         openAPI.setInfo(
-                OASFactory.createObject(Info.class).title("Fruit API").version("1.0")
+                OASFactory.createObject(Info.class).title("Infra Train API").version("1.0")
                         .description(
-                                "App for performing operations on fruits")
-                        .contact(
-                                OASFactory.createObject(Contact.class).name("Suraj")
-                                .email("suraj.gudimetla@al-enterprise.com")
-                        )
-                        .license(
-                                OASFactory.createObject(License.class)
-                                        .name("Eclipse Public License - v 1.0").url(
-                                        "https://www.eclipse.org/legal/epl-v10.html")));
+                                "An API which helps to get QoE data of devices present in a specified site in a given time period"
+                        ));
 
         openAPI.addServer(
                 OASFactory.createServer()
-                        .url("http://localhost:{port}")
+                        .url("http://qoe_monitoring_ms_url:8080")
                         .description("Development Server")
-                        .variables(Collections.singletonMap("port",
-                                OASFactory.createServerVariable()
-                                        .defaultValue("8080")
-                                        .description("Server HTTP port."))));
+                        );
     }
 
 }

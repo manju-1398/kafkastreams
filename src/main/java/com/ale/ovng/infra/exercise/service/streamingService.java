@@ -1,4 +1,4 @@
-package com.ale.ovng.infra.exercise.Service;
+package com.ale.ovng.infra.exercise.service;
 
 
 import com.ale.ovng.infra.exercise.model.Class.QoE;
@@ -7,6 +7,8 @@ import com.ale.ovng.infra.exercise.model.Serializer.JsonSerializer;
 import com.ale.ovng.infra.exercise.model.Class.Device;
 import com.ale.ovng.infra.exercise.model.Class.MacMapping;
 import io.quarkus.kafka.client.serialization.JsonbSerde;
+import io.quarkus.runtime.ShutdownEvent;
+import io.quarkus.runtime.StartupEvent;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
@@ -18,6 +20,7 @@ import org.apache.kafka.streams.kstream.*;
 import org.json.simple.JSONArray;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.event.Observes;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Properties;
@@ -25,18 +28,11 @@ import java.util.Properties;
 
 
 @ApplicationScoped
-
-
 public class streamingService {
 
+    private KafkaStreams streams;
 
-
-
-    public static void main(String[] args) {
-
-
-
-
+    public void onStart(@Observes StartupEvent event) {
       //  streamingService w = new streamingService();
 
         Properties config = new Properties();
@@ -95,13 +91,14 @@ public class streamingService {
         qoe_dev.to("internal_device_events",
                 Produced.with(Serdes.String(),QOE_INFO));
 
-        KafkaStreams streams = new KafkaStreams(builder.build(), config);
+        streams = new KafkaStreams(builder.build(), config);
         streams.cleanUp(); // only do this in dev - not in prod
         streams.start();
 
-        // shutdown hook to correctly close the streams application
-        Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
+    }
 
+    void onStop(@Observes ShutdownEvent event) {
+        streams.close();
     }
 
     private static  QoE[] getQoes(MacMapping macMapping, Device dev) {

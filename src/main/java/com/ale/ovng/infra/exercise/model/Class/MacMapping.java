@@ -4,10 +4,10 @@ package com.ale.ovng.infra.exercise.model.Class;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-//@ApplicationScoped
 @Data
-//@JsonRootName("macmapping")
+@Schema(name="MacMapping", description="POJO that represents the mac mapping details.")
 public class MacMapping
 {
 

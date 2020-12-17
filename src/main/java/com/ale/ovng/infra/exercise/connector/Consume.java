@@ -1,6 +1,6 @@
 package com.ale.ovng.infra.exercise.connector;
 
-import com.ale.ovng.infra.exercise.Service.streamingService;
+import com.ale.ovng.infra.exercise.service.streamingService;
 import com.ale.ovng.infra.exercise.model.Class.QoE;
 import io.smallrye.reactive.messaging.annotations.Blocking;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
