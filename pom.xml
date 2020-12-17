@@ -181,6 +181,10 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy-jackson</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-openapi</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -249,7 +253,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>com.ale.ovng.infra.exercise.Service.streamingService</mainClass>
+              <mainClass>com.ale.ovng.infra.exercise.service.streamingService</mainClass>
             </manifest>
           </archive>
         </configuration>
