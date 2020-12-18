@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.quarkus:quarkus-platform-descriptor-api:0.26.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/quarkus/quarkus-platform-descriptor-api/0.26.1/quarkus-platform-descriptor-api-0.26.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/quarkus/quarkus-platform-descriptor-api/0.26.1/quarkus-platform-descriptor-api-0.26.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/quarkus/quarkus-platform-descriptor-api/0.26.1/quarkus-platform-descriptor-api-0.26.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
