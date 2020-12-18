@@ -1,0 +1,8 @@
+com\ale\ovng\infra\exercise\model\Class\QoE.class
+com\ale\ovng\infra\exercise\controller\Aggregator.class
+com\ale\ovng\infra\exercise\InventoryOASFilter.class
+com\ale\ovng\infra\exercise\model\Class\MacMapping.class
+com\ale\ovng\infra\exercise\model\Serializer\JsonSerializer.class
+com\ale\ovng\infra\exercise\model\Class\Device.class
+com\ale\ovng\infra\exercise\model\Serializer\JsonDeserializer.class
+com\ale\ovng\infra\exercise\model\Serializer\ConsDeserializer.class
